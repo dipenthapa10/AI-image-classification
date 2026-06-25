@@ -1,5 +1,6 @@
 #AI - MNIST digit recoggnizer
 #Dipen Thapa
+# MLPClassifier
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -42,3 +43,15 @@ model = MLPClassifier(hidden_layer_sizes=(128,64), # two hidden layers: layer 1 
                       verbose = True) # prints the progress during training 
 
 print("Neural Network Built")
+
+#ttrain the model : used .fit() means train tthe model
+model.fit(X_train,y_train)
+
+y_pred = model.predict(X_test) # test stored here
+print("prediction done")
+
+accuracy = accuracy_score(y_test,y_pred)
+print("test accuracy: ",accuracy)
+print("Correct predictions:", int(accuracy * 10000), "out of 10,000")
+
+# got beanch mark of 97.7% accuracy
