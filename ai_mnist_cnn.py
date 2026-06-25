@@ -80,3 +80,7 @@ history = model.fit(
 
 test_loss, test_accuracy = model.evaluate(X_test, y_test)
 print("CNN accuracy: ", round(test_accuracy * 100, 2), "%")
+
+# saving the trained model
+model.save('mnist_cnn_model.keras')
+print("Model saved!")
