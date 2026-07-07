@@ -8,8 +8,8 @@ from tensorflow.keras import layers, models
 import os
 
 # Fix random seed 
-# tf.random.set_seed(42)
-# np.random.seed(42)
+tf.random.set_seed(42)
+np.random.seed(42)
 
 # load data
 (X_train,y_train),(X_test,y_test) = tf.keras.datasets.mnist.load_data()
@@ -40,7 +40,7 @@ model = models.Sequential([
 #              filter 3 finds curves
 #              and so on...
 
-# (3,3)     →  size of each filter window
+# (3,3)     →  size of each filter window. ( kernal)
 #              3 pixels wide, 3 pixels tall
 #              looks at a 3×3 group of pixels at a time
 
@@ -72,7 +72,7 @@ model.summary()
 
 #complie
 model.compile( optimizer = 'adam',
-              loss = 'sparse_categorical_crossentropy',
+              loss = 'sparse_categorical_crossentropy', # loss function 
               metrics = ["accuracy"]
               )
 
